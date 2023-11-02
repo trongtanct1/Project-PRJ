@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>accountLogin</servlet-name>
+        <servlet-class>Controllers.accountLogin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Productlist</servlet-name>
+        <servlet-class>Controllers.Productlist</servlet-class>
+        <!-- Cấu hình multipart-config cho servlet này -->
+        <multipart-config>
+            <!-- Thiết lập kích thước tệp tối đa là 100 MB -->
+            <max-file-size>104857600</max-file-size>
+            <!-- 100 MB -->
+            <!-- Thiết lập kích thước yêu cầu tối đa, cũng nên là 100 MB hoặc lớn hơn -->
+            <max-request-size>104857600</max-request-size>
+            <!-- 100 MB -->
+            <!-- File size threshold -->
+            <file-size-threshold>0</file-size-threshold>
+        </multipart-config>
+    </servlet>
+    <servlet>
+        <servlet-name>Orderlist</servlet-name>
+        <servlet-class>Controllers.Orderlist</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Logout</servlet-name>
+        <servlet-class>Controllers.logout</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>UsernameCheckServlet</servlet-name>
+        <servlet-class>Controllers.UsernameCheckServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>accountLogin</servlet-name>
+        <url-pattern>/Login</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>home.jsp</welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>Productlist</servlet-name>
+        <url-pattern>/prlist/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Orderlist</servlet-name>
+        <url-pattern>/olist/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Logout</servlet-name>
+        <url-pattern>/logout</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.js</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.css</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jpg</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.png</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.jfif</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>default</servlet-name>
+        <url-pattern>*.gif</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UsernameCheckServlet</servlet-name>
+        <url-pattern>/UsernameCheckServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
